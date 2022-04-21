@@ -12,14 +12,23 @@ app.use(
 );
 app.use(json());
 
-const { parsed: config } = dotenv.config();
+// const { parsed: config } = dotenv.config();
 
-const BASE_URL = `https://api.cloudinary.com/v1_1/${config.CLOUD_NAME}/resources/image`
+// const BASE_URL = `https://api.cloudinary.com/v1_1/${config.CLOUD_NAME}/resources/image`
+
+// const auth = {
+//     username: config.API_KEY,
+//     password: config.API_SECRET,
+// }
+
+
+const BASE_URL = `https://api.cloudinary.com/v1_1/${process.env.CLOUD_NAME}/resources/image`
 
 const auth = {
-    username: config.API_KEY,
-    password: config.API_SECRET,
+    username: process.env.API_KEY,
+    password: process.env.API_SECRET,
 }
+
 
 app.get('/',  () => {
     return ({
