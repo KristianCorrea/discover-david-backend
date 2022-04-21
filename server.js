@@ -21,8 +21,8 @@ const auth = {
     password: config.API_SECRET,
 }
 
-app.get('/', async (req, res) => {
-    return res.send({
+app.get('/',  () => {
+    return ({
         hello: "hi"
     });
 });
