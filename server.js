@@ -21,6 +21,12 @@ const auth = {
     password: config.API_SECRET,
 }
 
+app.get('/', async (req, res) => {
+    return res.send({
+        hello: "hi"
+    });
+});
+
 app.get('/photos', async (req, res) => {
     const response = await axios.get(BASE_URL, {
         auth
