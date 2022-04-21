@@ -30,10 +30,8 @@ const auth = {
 }
 
 
-app.get('/',  () => {
-    return ({
-        hello: "hi"
-    });
+app.get('/',  (req, res) => {
+    return res.status(200).json("Server is up and running.")
 });
 
 app.get('/photos', async (req, res) => {
