@@ -12,15 +12,7 @@ app.use(
 );
 app.use(json());
 
-// const { parsed: config } = dotenv.config();
-
-// const BASE_URL = `https://api.cloudinary.com/v1_1/${config.CLOUD_NAME}/resources/image`
-
-// const auth = {
-//     username: config.API_KEY,
-//     password: config.API_SECRET,
-// }
-
+dotenv.config(); //Comment this out for production
 
 const BASE_URL = `https://api.cloudinary.com/v1_1/${process.env.CLOUD_NAME}/resources/image`
 
